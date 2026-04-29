@@ -5,8 +5,12 @@ import {
   Mail, MessageSquare, ArrowRight, Zap, Activity, Navigation,
   HeartPulse, Truck, Baby, CalendarClock
 } from "lucide-react";
+import CallIcon from "../components/Call";
+import WhatsAppIcon from "../components/Icon";
 
-const PHONE = "+91 9999999999";
+
+
+const PHONE = "+91 9990083014";
 
 const GLOBAL_STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
@@ -256,8 +260,9 @@ function Navbar({ onBook }) {
   }, []);
 
   const links = [
-    { label: "Services", href: "#services" },
+  
     { label: "About", href: "#about" },
+      { label: "Services", href: "#services" },
     { label: "Coverage", href: "#coverage" },
     { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
@@ -886,7 +891,6 @@ function Contact() {
               style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
               {[
                 { icon:<Phone size={15}/>, label:"Emergency", value:PHONE, href:`tel:${PHONE}` },
-                { icon:<Phone size={15}/>, label:"Support", value:"1800-200-300", href:"tel:1800200300" },
                 { icon:<Mail size={15}/>, label:"Email", value:"hello@swiftmed.in", href:"mailto:hello@swiftmed.in" },
                 { icon:<MapPin size={15}/>, label:"Location", value:"Noida NCR", href:"#" },
               ].map(({ icon, label, value, href }) => (
@@ -1009,13 +1013,9 @@ function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-900 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-xs">
-          <p>© 2024 SwiftMed Emergency Services. All rights reserved.</p>
-          <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6">
-            {["Privacy Policy","Terms of Service","DISHA Compliant"].map(l=>(
-              <a key={l} href="#" className="hover:text-white transition-colors">{l}</a>
-            ))}
-          </div>
+        <div className="border-t border-gray-900 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-xs">
+          <p>© 2026 SwiftMed Emergency Services. All rights reserved.</p>
+        
         </div>
       </div>
     </footer>
@@ -1035,18 +1035,8 @@ function FloatingCTA({ onBook }) {
 
   return (
     <div className="fixed bottom-4 left-0 right-0 z-30 flex justify-center gap-3 px-4 sm:hidden">
-      <a
-        href={`tel:${PHONE}`}
-        className="flex-1 flex items-center justify-center gap-2 bg-gray-900 text-white text-sm font-bold py-3.5 rounded-2xl shadow-2xl border border-gray-700"
-      >
-        <Phone size={16}/> Call
-      </a>
-      <button
-        onClick={onBook}
-        className="flex-1 flex items-center justify-center gap-2 bg-red-600 text-white text-sm font-bold py-3.5 rounded-2xl shadow-2xl btn-red-glow"
-      >
-        <Zap size={16}/> Book Now
-      </button>
+     
+    
     </div>
   );
 }
@@ -1069,6 +1059,8 @@ export default function App() {
       <MapSection />
       <FAQ />
       <Contact />
+   <CallIcon/>
+   <WhatsAppIcon/>
       <Footer />
       <FloatingCTA onBook={openBook} />
     </>
