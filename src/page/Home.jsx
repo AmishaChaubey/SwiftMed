@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import {
   Phone, X, Menu, CheckCircle, Clock, Shield, Heart, Star,
   MapPin, AlertCircle, Users, Award, Plus, Minus,
@@ -145,8 +146,7 @@ function BookingModal({ onClose }) {
             <button
               onClick={onClose}
               className="text-white bg-white/20 hover:bg-white/30 p-2 rounded-xl transition-colors flex-shrink-0 ml-4"
-            >
-              <X size={18} />
+            > <X size={18} />
             </button>
           </div>
           <a
